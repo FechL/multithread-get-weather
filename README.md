@@ -1,25 +1,41 @@
-# Komputasi Paralel Project
+# Parallel Computing Project — Multithreaded Weather Fetcher
 
-Program ini mengambil data cuaca dari beberapa kecamatan di **Papua Barat** secara **multithread** menggunakan API dari [WeatherAPI](https://www.weatherapi.com/).  
-Hasilnya disimpan ke file Excel.
+This program retrieves current weather (and optionally air quality) for multiple locations using multithreading and the WeatherAPI service. Results are written to a CSV file.
 
-## Cara Menjalankan
-1. Instal dependensi:
-   ```bash
-   pip install pandas requests python-dotenv openpyxl
-   ````
-2. Buat file `.env`:
-   ```bash
-   API_KEY=<masukkan_api_key_anda>
-   ```
-3. Pastikan file `papua_barat.xlsx` berisi daftar kecamatan.
-4. Jalankan:
+## Setup
 
-   ```bash
-   python main.py
-   ```
+1. Install dependencies from `requirements.txt`:
 
-## Catatan
-* Simpan `.env` di direktori yang sama dengan `main.py`.
-* Jangan upload `.env` ke GitHub.
+```bash
+pip install -r requirements.txt
+```
 
+2. Create a `.env` file in the project root containing your API key:
+
+```bash
+API_KEY=<your_weatherapi_key>
+```
+
+3. Configure which locations to fetch in `configuration.py`.
+
+- You MUST set `LOCATIONS` to a non-empty list of location names in `configuration.py`.
+- Optionally set `LOCATION_SUFFIX` (e.g. `"Papua Barat, Indonesia"`) to append to queries.
+- Use `OUTPUT_CSV` to change the output filename (default: `output.csv`).
+- Set `USE_AQI = True` to request air quality (may use additional API quota).
+
+## Run
+
+From the project root run:
+
+```bash
+python get_weather.py
+```
+
+## Output
+
+By default, results are saved to `output.csv` (or the filename configured in `configuration.py`).
+
+## Notes
+
+- The project no longer reads locations from an Excel file. Provide locations via `configuration.py`.
+- The script uses `API_KEY` from `.env` (requires `python-dotenv`).
