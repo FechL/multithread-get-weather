@@ -4,7 +4,7 @@ This program retrieves current weather (and optionally air quality) for multiple
 
 ![WeatherAPI Logo](img/logo.png)
 
-WeatherAPI is a real-time weather data platform that provides current conditions, forecasts, air quality, astronomy, and historical weather information through API endpoints.
+[WeatherAPI](https://www.weatherapi.com) is a real-time weather data platform that provides current conditions, forecasts, air quality, astronomy, and historical weather information through API endpoints.
 
 ## Setup
 
