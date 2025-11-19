@@ -1,6 +1,10 @@
-# Parallel Computing Project — Multithreaded Weather Fetcher
+# Multithreaded Weather Fetcher
 
 This program retrieves current weather (and optionally air quality) for multiple locations using multithreading and the WeatherAPI service. Results are written to a CSV file.
+
+![WeatherAPI Logo](img/logo.png)
+
+WeatherAPI is a real-time weather data platform that provides current conditions, forecasts, air quality, astronomy, and historical weather information through API endpoints.
 
 ## Setup
 
